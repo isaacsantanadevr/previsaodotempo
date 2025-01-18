@@ -34,9 +34,9 @@ public class TempoCidadeController {
 
             return "previsao";
         } catch (CidadeNaoEncontradaException e) {
-            model.addAttribute("erro", "Cidade não encontrada! Verifique os dados!");
+            model.addAttribute("erro", e.getMessage());
         } catch (Exception e){
-            model.addAttribute("erro", "Erro inesperado: " + e.getMessage());
+            model.addAttribute("erro", "Erro inesperado");
         }
         return "previsao";
     }
